@@ -63,5 +63,4 @@ document.querySelectorAll('[data-interest]').forEach(a=>a.addEventListener('clic
 const SCRIPT_URL='https://script.google.com/macros/s/AKfycbzFmMMvYqWkKD75RRmB9bvYHZPG8dMvopZx9sI5K97oXvZLVfL89DGwHlaAY4cdbPzP/exec';
 document.getElementById('contactForm').addEventListener('submit',async e=>{e.preventDefault();const f=e.currentTarget,b=f.querySelector('button'),s=document.getElementById('status');if(!f.reportValidity())return;const d=new URLSearchParams(new FormData(f));b.disabled=true;b.textContent='Invio in corso…';s.textContent='Invio della richiesta…';try{await fetch(SCRIPT_URL,{method:'POST',mode:'no-cors',body:d});s.textContent='Richiesta inviata. Grazie per aver contattato NAYDE!';f.reset()}catch(err){s.textContent='Invio non riuscito. Riprova.'}finally{b.disabled=false;b.textContent='INVIA RICHIESTA ↗'}});
 document.getElementById('year').textContent=new Date().getFullYear();
-</script></body></html>-------------------------------
-
+</script></body></html>
